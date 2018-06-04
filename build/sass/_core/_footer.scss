@@ -1,0 +1,39 @@
+.site__footer {
+  .collapse {
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+  .card {
+    padding: 0;
+    background-color: transparent;
+    border: 0 none;
+    ul {
+      margin: 0;
+      li {
+        a {
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  .card-header {
+    background-color: transparent;
+    border: 0 none;
+  }
+}
+
+.footer__col-header {
+  position: relative;
+  .btn {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-right: 25px;
+  }
+}
