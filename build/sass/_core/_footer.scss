@@ -1,6 +1,15 @@
 .site__footer {
+  background-color: $bg-light;
+
+  .footer__accordion {
+    padding: 35px 0;
+    @include tablet-max {
+      padding: 15px 0;
+    }
+  }
+
   .collapse {
-    @media (min-width: 768px) {
+    @include tablet-min {
       display: block;
     }
   }
@@ -8,11 +17,47 @@
     padding: 0;
     background-color: transparent;
     border: 0 none;
+    border-right: 1px solid $white;
+    border-left: 1px solid $border-light;
+    margin-bottom: 15px;
+    &:first-child {
+      border-left: 0 none;
+    }
+    &:last-child {
+      border-right: 0 none;
+    }
+    + .card {
+      @include desktopLg-min {
+        padding-left: 35px;
+      }
+    }
     ul {
       margin: 0;
-      li {
+      > li {
         a {
           line-height: 40px;
+        }
+      }
+      @include tablet-max {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: -15px;
+        > li {
+          padding-left: 10px;
+          padding-right: 10px;
+          + li {
+            position: relative;
+            &:before {
+              content: '';
+              width: 2px;
+              background-color: $border-light;
+              position: absolute;
+              top: 10px;
+              bottom: 10px;
+              left: 0;
+            }
+          }
         }
       }
     }
@@ -20,6 +65,17 @@
   .card-header {
     background-color: transparent;
     border: 0 none;
+  }
+  a {
+    color: $text-header;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      outline: none;
+      color: $text-header;
+    }
   }
 }
 
@@ -29,11 +85,30 @@
     position: absolute;
     right: 0;
     top: -5px;
-    @media (min-width: 768px) {
+    color: $text-header;
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    @include tablet-min{
       display: none;
     }
   }
-  @media (max-width: 767px) {
+  @include tablet-max {
     padding-right: 25px;
+  }
+}
+
+.copy-right-info {
+  background-color: $bg-dark;
+  padding: 30px 15px;
+  color: $white;
+
+  p {
+    margin: 0;
+  }
+  @include tablet-max {
+    display: none;
   }
 }

@@ -32,3 +32,11 @@ body {
 h5, .h5 {
   font-size: 1.8rem;
 }
+
+.container {
+  max-width: 1370px;
+  @media (min-width: 1200px) {
+    padding-left: 3.0rem;
+    padding-right: 3.0rem;
+  }
+}
