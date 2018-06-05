@@ -4,13 +4,19 @@
   .footer__accordion {
     padding: 35px 0;
     @include tablet-max {
-      padding: 15px 0;
+      padding: 15px 0 0 0;
     }
   }
 
   .collapse {
     @include tablet-min {
       display: block;
+    }
+  }
+  @include tablet-max {
+    .collapse.show,
+    .collapsing {
+      background-color: $bg-shade-white;
     }
   }
   .card {
@@ -25,6 +31,7 @@
     }
     &:last-child {
       border-right: 0 none;
+      margin-bottom: 0;
     }
     + .card {
       @include desktopLg-min {
@@ -42,7 +49,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: -15px;
         > li {
           padding-left: 10px;
           padding-right: 10px;
@@ -60,6 +66,9 @@
           }
         }
       }
+    }
+    @include tablet-max {
+      border: 0 none;
     }
   }
   .card-header {
@@ -97,6 +106,15 @@
   }
   @include tablet-max {
     padding-right: 25px;
+    .btn {
+      &[aria-expanded='true'] {
+        .fa {
+          &:before {
+            content: '\f068';
+          }
+        }
+      }
+    }
   }
 }
 
